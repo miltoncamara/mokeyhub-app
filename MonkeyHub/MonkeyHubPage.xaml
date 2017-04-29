@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:MonkeyHub" x:Class="MonkeyHub.MonkeyHubPage" Title="Monkey Nights">
+	<StackLayout>
+		<Button Text="Navegar Normal" Clicked="Handle_Clicked" />
+		<Button Text="Navegar Modal" Clicked="HandleModal_Clicked" />
+		<Entry Text="{Binding SearchTerm}" />
+		<Button Text="Pesquisar" Command="{Binding SearchCommand}" />
+		<ListView ItemsSource="{Binding Respostas}">
+			<ListView.ItemTemplate>
+				<DataTemplate>
+					<TextCell x:Name="teste" Text="{Binding Name}" Detail="{Binding Description}" />
+				</DataTemplate>
+			</ListView.ItemTemplate>
+		</ListView>
+	</StackLayout>
+</ContentPage>
